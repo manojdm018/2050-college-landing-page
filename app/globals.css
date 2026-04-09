@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+:root {
+  --background: #04030b;
+  --foreground: #d9f6ff;
+  --neon-cyan: #3be7ff;
+  --neon-purple: #9f7bff;
+  --neon-blue: #2f66ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 15% 25%, rgba(59, 231, 255, 0.2), transparent 35%),
+    radial-gradient(circle at 80% 15%, rgba(159, 123, 255, 0.22), transparent 35%),
+    radial-gradient(circle at 50% 85%, rgba(47, 102, 255, 0.2), transparent 30%),
+    #04030b;
+  color: var(--foreground);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+.holo-grid {
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(50, 95, 160, 0.15) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(50, 95, 160, 0.1) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 0.6), transparent 85%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glass-panel {
+  border: 1px solid rgba(151, 192, 255, 0.22);
+  background: linear-gradient(140deg, rgba(16, 24, 41, 0.75), rgba(14, 16, 32, 0.45));
+  backdrop-filter: blur(18px);
+  box-shadow:
+    0 0 0 1px rgba(59, 231, 255, 0.08) inset,
+    0 0 26px rgba(80, 130, 255, 0.22);
+}
+
+.neon-text {
+  text-shadow:
+    0 0 14px rgba(59, 231, 255, 0.8),
+    0 0 34px rgba(159, 123, 255, 0.65);
+}
+
+.scanline::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.08) 1px,
+    transparent 2px,
+    transparent 4px
+  );
+  opacity: 0.08;
+  pointer-events: none;
+}
